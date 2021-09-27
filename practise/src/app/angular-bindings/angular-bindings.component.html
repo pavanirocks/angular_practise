@@ -1,0 +1,43 @@
+<p>angular-bindings works!</p>
+<h2>String interpolation (1 way binding)</h2>
+<h1>{{appName}}</h1>
+
+<h2>Event Binding</h2>
+<button (click)="showData($event)">Click here</button>
+
+<h2>Property Binding</h2>
+<input type="text" [value]="userName">
+
+<h3>Attribute Binding Example</h3>
+<div>
+    <table>
+        <tr>
+            <td [attr.colspan]="3">three</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Class Binding</h2>
+
+<div>
+    <h1 [class.myClass]="isTrue">This class binding is for true value</h1>
+    <h1 [class.myClass]="!isTrue">This class binding is for false value</h1>
+</div>
+
+<h2>Style Binding</h2>
+
+<div>
+    <h1 [style.font-size.px]="10">This is a Blue Heading</h1>
+    <!-- <h1 [style.color]="blue">This is a Blue Heading</h1> -->
+</div>
+
+
+<h2>Two way Binding</h2>
+
+<input type="text" [(ngModel)]="name" />
+<p>Two way binding! Hello {{ userName }}!</p>
