@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { Child2Component } from '../child2/child2.component';
 @Component({
   selector: 'app-angular-bindings',
   templateUrl: './angular-bindings.component.html',
@@ -10,6 +10,9 @@ export class AngularBindingsComponent implements OnInit {
   isTrue: boolean = true;
   name = "pavani";
   appName = "My first app in Angular 8";
+  myInputMessage:string ="I am the parent component" 
+  @ViewChild('child')
+  public child2!: Child2Component;
 
   constructor() { }
 
@@ -22,6 +25,12 @@ export class AngularBindingsComponent implements OnInit {
       console.log($event.target.value);
     }
   }
+  GetChildData(data: string){  
+    console.log(data);  
+ }  
+ public setChildProperty(): void {
+  this.child2.application = 'This Data is Coming From Parent To Child - via @ViewChild()';
+}
 
 
 }

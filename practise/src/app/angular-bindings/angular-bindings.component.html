@@ -41,3 +41,7 @@
 
 <input type="text" [(ngModel)]="name" />
 <p>Two way binding! Hello {{ userName }}!</p>
+
+<h2>Parent Component</h2>
+<app-child [myinputMsg]="myInputMessage" (myOutput)="GetChildData($event)"></app-child>
+<app-child2 #child></app-child2>
