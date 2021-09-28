@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { Child2Component } from '../child2/child2.component';
+import { DataService } from "../services/behaviourSubject.service";
 @Component({
   selector: 'app-angular-bindings',
   templateUrl: './angular-bindings.component.html',
@@ -13,10 +14,13 @@ export class AngularBindingsComponent implements OnInit {
   myInputMessage:string ="I am the parent component" 
   @ViewChild('child')
   public child2!: Child2Component;
+  message!: string;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message)
+   }
 
   showData($event: any) {
     console.log("button is clicked!");

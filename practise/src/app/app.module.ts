@@ -7,7 +7,7 @@ import { AngularBindingsComponent } from './angular-bindings/angular-bindings.co
 import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { Child2Component } from './child2/child2.component';
-
+import { DataService } from './services/behaviourSubject.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,7 @@ import { Child2Component } from './child2/child2.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -45,3 +45,14 @@
 <h2>Parent Component</h2>
 <app-child [myinputMsg]="myInputMessage" (myOutput)="GetChildData($event)"></app-child>
 <app-child2 #child></app-child2>
+
+<p>Behaviour subject</p> 
+<!-- https://stackoverflow.com/questions/44414226/angular-4-pass-data-between-2-not-related-components -->
+{{message}}
+
+<ul>
+    <li><a [routerLink]="['/child2']">child2</a></li>
+    <!-- <li><a [routerLink]="['/account', 2]">Account 2</a></li>
+    <li><a [routerLink]="['/account', 3]">Account 3</a></li> -->
+    <!-- https://www.samjulien.com/how-to-use-route-parameters-in-angular -->
+  </ul>
